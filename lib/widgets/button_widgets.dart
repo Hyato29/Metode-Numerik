@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class ButtonWidget extends StatelessWidget {
-  ButtonWidget({required this.title, required this.color, super.key});
+  ButtonWidget({required this.title, required this.color, required this.textColor, super.key});
 
   String title;
   Color color;
+  Color textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +19,8 @@ class ButtonWidget extends StatelessWidget {
         child: Text(
           title,
           textAlign: TextAlign.center,
-          style: const TextStyle(
-              color: Colors.white, fontFamily: 'Poppins', fontSize: 16),
+          style: TextStyle(
+              color: textColor, fontFamily: 'Poppins', fontSize: 16),
         ),
       ),
     );

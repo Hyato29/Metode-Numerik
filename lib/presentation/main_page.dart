@@ -182,7 +182,7 @@ class _MainPageState extends State<MainPage> {
                         const Text(
                           "LN Cek ?",
                           style: TextStyle(
-                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.bold,
                               fontSize: 16,
                               color: Color.fromARGB(255, 0, 186, 6)),
                         ),
@@ -224,107 +224,131 @@ class _MainPageState extends State<MainPage> {
                         }),
                   ],
                 ),
-                const Divider(
-                  color: Colors.amber,
-                  thickness: 1.5,
-                ),
                 const SizedBox(
                   height: 15,
                 ),
                 (showDSS)
-                    ? Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Expanded(
-                                  child: ButtonWidget(
-                                      title: "Analitik", color: Colors.blue)),
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              Expanded(
-                                  child: ButtonWidget(
-                                      title: analitik().toStringAsFixed(3),
-                                      color: Colors.amber)),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: [
-                              Expanded(
-                                  child: ButtonWidget(
-                                      title: "Numerik", color: Colors.blue)),
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              Expanded(
-                                  child: ButtonWidget(
-                                      title: numerik().toStringAsFixed(3),
-                                      color: Colors.amber)),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: [
-                              Expanded(
-                                  child: ButtonWidget(
-                                      title: "Galat Mutlak",
-                                      color: Colors.blue)),
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              Expanded(
-                                  child: ButtonWidget(
-                                      title: galatMutlak().toStringAsFixed(3),
-                                      color: Colors.amber)),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: [
-                              Expanded(
-                                  child: ButtonWidget(
-                                      title: "Galat Relatif",
-                                      color: Colors.blue)),
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              Expanded(
-                                  child: ButtonWidget(
-                                      title: galatRelatif().toStringAsFixed(3),
-                                      color: Colors.amber)),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: [
-                              Expanded(
-                                  child: ButtonWidget(
-                                      title: "Akurasi", color: Colors.blue)),
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              Expanded(
-                                  child: ButtonWidget(
-                                      title: "${akurasi().toStringAsFixed(0)}%",
-                                      color: Colors.amber)),
-                            ],
-                          ),
-                        ],
-                      )
-                    : const Center(
-                        child: Text(
-                          "",
+                    ? Container(
+                        width: double.infinity,
+                        height: 314,
+                        padding: const EdgeInsets.all(12),
+                        decoration: const BoxDecoration(
+                            color: Colors.amber,
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(10))),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Expanded(
+                                    child: ButtonWidget(
+                                  title: "Analitik",
+                                  color: Colors.blue,
+                                  textColor: Colors.white,
+                                )),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                Expanded(
+                                    child: ButtonWidget(
+                                        title: analitik().toStringAsFixed(3),
+                                        color: Colors.white,
+                                        textColor: Colors.black)),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              children: [
+                                Expanded(
+                                    child: ButtonWidget(
+                                        title: "Numerik",
+                                        color: Colors.blue,
+                                        textColor: Colors.white)),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                Expanded(
+                                    child: ButtonWidget(
+                                        title: numerik().toStringAsFixed(3),
+                                        color: Colors.white,
+                                        textColor: Colors.black)),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              children: [
+                                Expanded(
+                                    child: ButtonWidget(
+                                        title: "Galat Mutlak",
+                                        color: Colors.blue,
+                                        textColor: Colors.white)),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                Expanded(
+                                    child: ButtonWidget(
+                                        title: galatMutlak().toStringAsFixed(3),
+                                        color: Colors.white,
+                                        textColor: Colors.black)),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              children: [
+                                Expanded(
+                                    child: ButtonWidget(
+                                        title: "Galat Relatif",
+                                        color: Colors.blue,
+                                        textColor: Colors.white)),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                Expanded(
+                                    child: ButtonWidget(
+                                        title:
+                                            galatRelatif().toStringAsFixed(3),
+                                        color: Colors.white,
+                                        textColor: Colors.black)),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              children: [
+                                Expanded(
+                                    child: ButtonWidget(
+                                        title: "Akurasi",
+                                        color: Colors.blue,
+                                        textColor: Colors.white)),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                Expanded(
+                                    child: ButtonWidget(
+                                        title:
+                                            "${akurasi().toStringAsFixed(0)}%",
+                                        color: Colors.white,
+                                        textColor: Colors.black)),
+                              ],
+                            ),
+                          ],
                         ),
+                      )
+                    : Container(
+                        height: 10,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.amber),
                       )
               ],
             ),
@@ -337,10 +361,7 @@ class _MainPageState extends State<MainPage> {
   Row xkValue() {
     return Row(
       children: [
-        ButtonWidget(
-          title: "XK",
-          color: Colors.blue,
-        ),
+        ButtonWidget(title: "XK", color: Colors.blue, textColor: Colors.white),
         const SizedBox(
           width: 10,
         ),
@@ -352,7 +373,8 @@ class _MainPageState extends State<MainPage> {
   Row xkPlusSatuValue() {
     return Row(
       children: [
-        ButtonWidget(title: "XK + 1", color: Colors.blue),
+        ButtonWidget(
+            title: "XK + 1", color: Colors.blue, textColor: Colors.white),
         const SizedBox(
           width: 10,
         ),
@@ -365,7 +387,7 @@ class _MainPageState extends State<MainPage> {
   Row ykValue() {
     return Row(
       children: [
-        ButtonWidget(title: "YK", color: Colors.blue),
+        ButtonWidget(title: "YK", color: Colors.blue, textColor: Colors.white),
         const SizedBox(
           width: 10,
         ),
@@ -379,7 +401,8 @@ class _MainPageState extends State<MainPage> {
   Row ykPlusSatuValue() {
     return Row(
       children: [
-        ButtonWidget(title: "YK + 1", color: Colors.blue),
+        ButtonWidget(
+            title: "YK + 1", color: Colors.blue, textColor: Colors.white),
         const SizedBox(
           width: 10,
         ),
@@ -420,7 +443,7 @@ class _MainPageState extends State<MainPage> {
   Row xValue() {
     return Row(
       children: [
-        ButtonWidget(title: "X*", color: Colors.blue),
+        ButtonWidget(title: "X*", color: Colors.blue, textColor: Colors.white),
         const SizedBox(
           width: 10,
         ),
