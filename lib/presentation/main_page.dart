@@ -167,15 +167,27 @@ class _MainPageState extends State<MainPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      "Decision Support System",
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(
-                      height: 10,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Show DSS",
+                          style: TextStyle(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Checkbox(
+                            shape: const OvalBorder(),
+                            activeColor: const Color.fromARGB(255, 0, 186, 6),
+                            value: showDSS,
+                            onChanged: (bool? value) {
+                              setState(() {
+                                showDSS = value!;
+                              });
+                            }),
+                      ],
                     ),
                     Row(
                       children: [
@@ -203,35 +215,14 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ],
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Text(
-                      "Show DSS",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 16,
-                      ),
-                    ),
-                    Checkbox(
-                        shape: const OvalBorder(),
-                        activeColor: const Color.fromARGB(255, 0, 186, 6),
-                        value: showDSS,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            showDSS = value!;
-                          });
-                        }),
-                  ],
-                ),
                 const SizedBox(
                   height: 15,
                 ),
                 (showDSS)
                     ? Container(
                         width: double.infinity,
-                        height: 314,
-                        padding: const EdgeInsets.all(12),
+                        height: 382,
+                        padding: const EdgeInsets.all(24),
                         decoration: const BoxDecoration(
                             color: Colors.amber,
                             borderRadius: BorderRadius.only(
@@ -240,6 +231,16 @@ class _MainPageState extends State<MainPage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            const Text(
+                              "Decision Support System",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
                             Row(
                               children: [
                                 Expanded(
