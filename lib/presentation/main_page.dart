@@ -221,7 +221,7 @@ class _MainPageState extends State<MainPage> {
                 (showDSS)
                     ? Container(
                         width: double.infinity,
-                        height: 382,
+                        height: 400,
                         padding: const EdgeInsets.all(24),
                         decoration: const BoxDecoration(
                             color: Colors.amber,
@@ -234,9 +234,13 @@ class _MainPageState extends State<MainPage> {
                             const Text(
                               "Decision Support System",
                               style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 16,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold),
+                            ),
+                            const Divider(
+                              color: Colors.white,
+                              thickness: 1.5,
                             ),
                             const SizedBox(
                               height: 20,
